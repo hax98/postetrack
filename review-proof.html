@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PosteItaliane SDA Tracking - Review Fix Proof</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #202223;
+      background: #f6f6f7;
+      line-height: 1.6;
+    }
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+    section {
+      background: #fff;
+      border: 1px solid #dfe3e8;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    h1, h2 {
+      margin-top: 0;
+      line-height: 1.25;
+    }
+    code {
+      background: #f1f2f4;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    ul {
+      padding-left: 22px;
+    }
+    a {
+      color: #005bd3;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <h1>PosteItaliane SDA Tracking review fixes</h1>
+      <p>Last updated: June 25, 2026.</p>
+      <p>This page documents the changes made for the Shopify App Store reviewer feedback.</p>
+    </section>
+
+    <section>
+      <h2>1. Accurate and complete pricing information</h2>
+      <p>The Shopify managed pricing configuration has been updated to remove the public free plan and remove the 14-day trial from all public paid plans.</p>
+      <ul>
+        <li>Starter: $3/month, 200 shipments per month.</li>
+        <li>Growth: $20/month, 1000 shipments per month.</li>
+        <li>Scale: $40/month, 2000 shipments per month.</li>
+      </ul>
+      <p>The public pricing information is also reflected in the app terms:</p>
+      <p><a href="https://hax98.github.io/postetrack/terms.html">https://hax98.github.io/postetrack/terms.html</a></p>
+    </section>
+
+    <section>
+      <h2>2. Theme app extension</h2>
+      <p>The storefront widget is implemented as an official Shopify Theme App Extension. Merchants do not need to edit theme code or paste manual scripts.</p>
+      <ul>
+        <li>Extension name: <code>SDA Tracking Widget</code>.</li>
+        <li>Extension handle: <code>sda-tracking-widget</code>.</li>
+        <li>Theme block file: <code>extensions/tracking-widget/blocks/tracking.liquid</code>.</li>
+        <li>Released Shopify app version: <code>posteitaliane-sda-tracking-19</code>.</li>
+      </ul>
+      <p>Source reference:</p>
+      <p><a href="https://github.com/hax98/poste-shopify-app/tree/main/extensions/tracking-widget">https://github.com/hax98/poste-shopify-app/tree/main/extensions/tracking-widget</a></p>
+    </section>
+
+    <section>
+      <h2>3. Onboarding instructions for theme app extension</h2>
+      <p>The embedded app now includes setup instructions and a direct Theme Editor link.</p>
+      <ul>
+        <li>Dashboard widget setup explains how to open Theme Editor, go to App embeds, enable <code>SDA Tracking Widget</code>, save, and preview an order page.</li>
+        <li>Settings page includes complete step-by-step instructions.</li>
+        <li>The app generates a Theme Editor deep link with <code>activateAppId</code> for the <code>tracking</code> app embed.</li>
+      </ul>
+      <p>Source references:</p>
+      <p><a href="https://github.com/hax98/poste-shopify-app/blob/main/app/routes/app._index.jsx">Dashboard setup instructions</a></p>
+      <p><a href="https://github.com/hax98/poste-shopify-app/blob/main/app/routes/app.settings.jsx">Settings setup instructions</a></p>
+      <p><a href="https://github.com/hax98/poste-shopify-app/blob/main/app/lib/billing.server.js">Theme Editor deep link generation</a></p>
+    </section>
+  </main>
+</body>
+</html>
