@@ -45,7 +45,7 @@
   <main>
     <section>
       <h1>PosteItaliane SDA Tracking review fixes</h1>
-      <p>Last updated: June 25, 2026.</p>
+      <p>Last updated: June 26, 2026.</p>
       <p>This page documents the changes made for the Shopify App Store reviewer feedback.</p>
     </section>
 
@@ -68,7 +68,7 @@
         <li>Extension name: <code>SDA Tracking Widget</code>.</li>
         <li>Extension handle: <code>sda-tracking-widget</code>.</li>
         <li>Theme block file: <code>extensions/tracking-widget/blocks/tracking.liquid</code>.</li>
-        <li>Released Shopify app version: <code>posteitaliane-sda-tracking-21</code>.</li>
+        <li>Released Shopify app version: <code>posteitaliane-sda-tracking-23</code>.</li>
       </ul>
       <p>Source reference:</p>
       <p><a href="https://github.com/hax98/poste-shopify-app/tree/main/extensions/tracking-widget">https://github.com/hax98/poste-shopify-app/tree/main/extensions/tracking-widget</a></p>
@@ -86,6 +86,18 @@
       <p><a href="https://github.com/hax98/poste-shopify-app/blob/main/app/routes/app._index.jsx">Dashboard setup instructions</a></p>
       <p><a href="https://github.com/hax98/poste-shopify-app/blob/main/app/routes/app.settings.jsx">Settings setup instructions</a></p>
       <p><a href="https://github.com/hax98/poste-shopify-app/blob/main/app/lib/billing.server.js">Theme Editor deep link generation</a></p>
+    </section>
+
+    <section>
+      <h2>4. Advanced notification fields</h2>
+      <p>The Shopify Flow trigger now exposes split-shipment and predictive-delivery fields so merchants can build precise customer email automations from Shopify-owned tooling.</p>
+      <ul>
+        <li>Split-shipment fields: <code>isSplitShipment</code>, <code>splitShipmentIndex</code>, <code>splitShipmentCount</code>, <code>splitShipmentTrackings</code>.</li>
+        <li>Predictive fields: <code>predictedDeliveryAt</code>, <code>predictionConfidence</code>, <code>isLate</code>, <code>ageDays</code>, <code>baselineTransitDays</code>.</li>
+        <li>Released Shopify app version: <code>posteitaliane-sda-tracking-23</code>.</li>
+      </ul>
+      <p>Source reference:</p>
+      <p><a href="https://github.com/hax98/poste-shopify-app/tree/main/extensions/tracking-status-flow-trigger">https://github.com/hax98/poste-shopify-app/tree/main/extensions/tracking-status-flow-trigger</a></p>
     </section>
   </main>
 </body>
