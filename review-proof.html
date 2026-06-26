@@ -99,6 +99,13 @@
       <p>Source reference:</p>
       <p><a href="https://github.com/hax98/poste-shopify-app/tree/main/extensions/tracking-status-flow-trigger">https://github.com/hax98/poste-shopify-app/tree/main/extensions/tracking-status-flow-trigger</a></p>
     </section>
+
+    <section>
+      <h2>5. Data deletion on uninstall</h2>
+      <p>The app uninstall webhook now deletes shop data, tracked orders, tracking events, sessions, API usage rows, and polling logs linked to the shop domain. The shop/redact webhook remains idempotent for follow-up Shopify privacy requests.</p>
+      <p>Source reference:</p>
+      <p><a href="https://github.com/hax98/poste-shopify-app/blob/main/app/lib/gdpr.server.js">https://github.com/hax98/poste-shopify-app/blob/main/app/lib/gdpr.server.js</a></p>
+    </section>
   </main>
 </body>
 </html>
