@@ -45,12 +45,25 @@
   <main>
     <section>
       <h1>PosteItaliane SDA Tracking review fixes</h1>
-      <p>Last updated: June 26, 2026.</p>
+      <p>Last updated: June 27, 2026.</p>
       <p>This page documents the changes made for the Shopify App Store reviewer feedback.</p>
     </section>
 
     <section>
-      <h2>1. Accurate and complete pricing information</h2>
+      <h2>1. Initiate installation from a Shopify-owned surface</h2>
+      <p>The embedded pricing plan buttons now preserve Shopify's embedded app context when submitting to Shopify Billing.</p>
+      <ul>
+        <li>The billing page loader builds the plan selection action as <code>/app/billing/start</code> plus the current Shopify query parameters.</li>
+        <li>Each pricing plan form posts to that context-preserving action, so Shopify receives the current <code>shop</code>, <code>host</code>, and <code>embedded</code> context instead of falling back to a manual shop-domain login screen.</li>
+        <li>The public root and <code>/auth/login</code> pages do not ask merchants to manually enter a <code>myshopify.com</code> URL; they send merchants back to Shopify App Store or Shopify Admin.</li>
+      </ul>
+      <p>Source references:</p>
+      <p><a href="https://github.com/hax98/poste-shopify-app/blob/main/app/routes/app.billing.jsx">Billing plan form context preservation</a></p>
+      <p><a href="https://github.com/hax98/poste-shopify-app/blob/main/app/routes/auth.login/route.jsx">Shopify-owned install/open fallback</a></p>
+    </section>
+
+    <section>
+      <h2>2. Accurate and complete pricing information</h2>
       <p>The Shopify managed pricing configuration has been updated to remove the public free plan and remove the 14-day trial from all public paid plans.</p>
       <ul>
         <li>Starter: $3/month, 200 shipments per month.</li>
@@ -62,7 +75,7 @@
     </section>
 
     <section>
-      <h2>2. Theme app extension</h2>
+      <h2>3. Theme app extension</h2>
       <p>The storefront widget is implemented as an official Shopify Theme App Extension. Merchants do not need to edit theme code or paste manual scripts.</p>
       <ul>
         <li>Extension name: <code>SDA Tracking Widget</code>.</li>
@@ -75,7 +88,7 @@
     </section>
 
     <section>
-      <h2>3. Onboarding instructions for theme app extension</h2>
+      <h2>4. Onboarding instructions for theme app extension</h2>
       <p>The embedded app now includes setup instructions and a direct Theme Editor link.</p>
       <ul>
         <li>Dashboard widget setup explains how to open Theme Editor, go to App embeds, enable <code>SDA Tracking Widget</code>, save, and preview an order page.</li>
@@ -89,7 +102,7 @@
     </section>
 
     <section>
-      <h2>4. Advanced notification fields</h2>
+      <h2>5. Advanced notification fields</h2>
       <p>The Shopify Flow trigger now exposes split-shipment and predictive-delivery fields so merchants can build precise customer email automations from Shopify-owned tooling.</p>
       <ul>
         <li>Split-shipment fields: <code>isSplitShipment</code>, <code>splitShipmentIndex</code>, <code>splitShipmentCount</code>, <code>splitShipmentTrackings</code>.</li>
@@ -101,7 +114,7 @@
     </section>
 
     <section>
-      <h2>5. Data deletion on uninstall</h2>
+      <h2>6. Data deletion on uninstall</h2>
       <p>The app uninstall webhook now deletes shop data, tracked orders, tracking events, sessions, API usage rows, and polling logs linked to the shop domain. The shop/redact webhook remains idempotent for follow-up Shopify privacy requests.</p>
       <p>Source reference:</p>
       <p><a href="https://github.com/hax98/poste-shopify-app/blob/main/app/lib/gdpr.server.js">https://github.com/hax98/poste-shopify-app/blob/main/app/lib/gdpr.server.js</a></p>
